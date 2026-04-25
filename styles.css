@@ -1,0 +1,252 @@
+body {
+  min-height: 300vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevents side-scrolling from the blob */
+  background-color: #ffffff ;
+
+}
+
+.top-blob-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  z-index: -1;
+}
+
+.fluid-blob {
+  width: 121%;
+  height: 100%;
+  background: linear-gradient(135deg, #00b4db 0%, #0073ff 100%);
+
+
+  border-bottom-left-radius: 60% 80%;
+  border-bottom-right-radius: 40% 60%;
+
+  transform: translateX(-10%) translateY(-10%);
+
+  box-shadow: 0 10px 30px rgba(0, 131, 176, 0.3);
+}
+
+.Title {
+  display: flex;
+  transform: translate(45px, 80px);
+}
+
+.Title h1 {
+  text-shadow: #0083b0 4px 4px 4px;
+  font-size: 90px;
+  color: white;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.app-bar {
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: space-between; /* Pushes items to opposite ends */
+  align-items: center;/* Centers items vertically */
+  margin: 0;
+  padding: 0;
+  height: 40px;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  position: sticky;           /* Keeps it at the top while scrolling */
+  top: 0;
+  background: linear-gradient(135deg, #00b4db 10%, #0073ff 90%);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  gap: 20px;                  /* Modern way to add space between items */
+}
+
+.nav-links h4 {
+  color: white;
+  text-underline-offset: 3px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links h6:hover {
+  text-decoration: underline;
+}
+
+
+.app-bar {
+  position: fixed; /* Or sticky */
+  top: 0;
+  left: 0;
+  width: 100%;    /* Fixed elements need an explicit width */
+  z-index: 1000;  /* Ensures it stays on top of other content */
+}
+
+.bottom-blob-container {
+  position: absolute; /* Use 'absolute' if you want it at the end of a long scroll */
+  bottom: -200%;
+  left: 0;
+  width: 100%;
+  height: 250px;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.fluid-blob-bottom {
+  width: 130%;
+  height: 100%;
+  /* A reversed gradient direction (bottom to top) */
+  background: linear-gradient(0deg, #0083b0 0%, #00b4db 100%);
+
+  /* "Flipped" curves: Top corners are rounded, bottom are flat */
+  border-top-left-radius: 50% 100%;
+  border-top-right-radius: 80% 90%;
+
+  /* Shifts it to hide the edges and center the peak */
+  transform: translateX(-15%) translateY(20%);
+
+  /* Soft glow pointing upwards */
+  box-shadow: 0 -10px 30px rgba(0, 131, 176, 0.2);
+}
+
+.image-1 > img {
+  position: absolute;
+  width: 40%;
+  height: auto;
+  transform: translate(940px, 300px);
+}
+
+.text-1 {
+  font-family: 'Montserrat', sans-serif;
+  width: 600px;
+  height: auto;
+  transform: translate(38px, 200px);
+  line-height: 1.6;
+  z-index: 1;
+}
+
+.text-1 > h6 {
+  font-size: 30px;
+  background: linear-gradient(32deg, #12859d 50%, #013887 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-radius: 10px;
+  border-color: white;
+}
+
+.text-1 h6::first-letter {
+  font-weight: 700;
+  font-size: 32px;
+  color: #12413a ;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 300%;
+  z-index: -1;
+  overflow: hidden;
+  background-size: cover;
+  background: linear-gradient(90deg, #82e3f8 10%, #837fc1 90%) center;
+  opacity: 0.3;
+}
+
+.text-2 {
+  font-family: 'Montserrat', sans-serif;
+  width: 700px;
+  height: auto;
+  line-height: 1.7;
+  text-align: center;
+  transform: translate(975px, -510px);
+}
+
+.text-2 > h4{
+  font-size: 40px;
+}
+
+.text-2 > h4, p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+  background: linear-gradient(32deg, #12859d 50%, #013887 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-radius: 10px;
+  border-color: white;
+
+}
+
+.text-2 > p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+  line-height: 1;
+
+}
+
+.dpdf  {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 60px;
+  color: blue;
+  text-decoration: blue;
+  text-align: center;
+  align-items: end;
+  position: absolute;
+  bottom: -42%;
+  left: 0;
+  right: -40%;
+  background: linear-gradient(to left, blue 10%, #837fc1 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes wobble {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  15% {
+    transform: translate(-2px, -1px) rotate(-5deg) scale(1.1);
+  }
+
+  30% {
+    transform: translate(2px, 1px) rotate(5deg) scale(0.9);
+  }
+
+  45% {
+    transform: translate(-2px, 1px) rotate(-3deg) scale(1.05);
+  }
+
+  60% {
+    transform: translate(2px, -1px) rotate(3deg) scale(0.95);
+  }
+
+  75% {
+    transform: translate(-1px, -1px) rotate(-1deg) scale(1.02);
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+}
+.dpdf:hover {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 60px;
+  color: cadetblue;
+  display: inline-block;
+  animation: wobble 0.7s ease infinite;
+
+}
+
+
+
